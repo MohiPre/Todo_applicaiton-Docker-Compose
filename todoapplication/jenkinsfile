@@ -1,0 +1,30 @@
+pipeline{
+    agent any
+    stages{
+        stage("clean-up"){
+            steps{
+                sh 'docker image rm -f mogiii/frontend'
+                sh 'docker image rm -f mogiii/backend'
+                
+            }
+        }
+        stage("Clone-Repo"){
+            steps{
+                deleteDir()
+                sh 'git clone https://github.com/MohiPre/Todo_applicaiton-Docker-Compose.git'
+            }
+                
+        }
+    
+        stage("Build"){
+            steps{
+                dir("./Todo_applicaiton-Docker-Compose/todoapplication"){
+                    sh 'docker-compose down'
+                    sh 'docker-compose up -d'
+                }
+                            
+            }
+        }
+    }
+}
+
