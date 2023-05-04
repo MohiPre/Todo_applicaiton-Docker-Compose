@@ -25,6 +25,7 @@ services:
     
   backend:                                   # backend API                                  
     build: ./backend                         # Building image form Dockerfile
+    image: mogiii/backend
     ports:                                   # Port Mapping
       - "8000:8000"
     volumes:                                 # Bind Mount 
@@ -38,6 +39,7 @@ services:
   
   frontend:
     build: ./frontend
+    image: mogiii/frontend
     stdin_open: true
     tty: true
     ports:
