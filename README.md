@@ -5,7 +5,7 @@ Using Docker Compose to Run Your Applications
 --> I have build a TODO applicaiton ( Frontend[REACT] - Backen[NODE] - Database[MondoDB] )
 
 --> First always go via the imperatinve approch for a Multi-Container Applicaiton and then go for Declerative approach .
-
+```
 Below is my TODO Applicaiton 
 ------------------------------
 
@@ -62,6 +62,7 @@ services:
 
 volumes:
   mydbvol:
+```
 
 
 
